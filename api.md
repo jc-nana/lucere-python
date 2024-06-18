@@ -22,7 +22,7 @@ from lucere.types.chat import CompletionCreateResponse, CompletionTestResponse
 
 Methods:
 
-- <code title="post /chat/completions">client.chat.completions.<a href="./src/lucere/resources/chat/completions.py">create</a>() -> <a href="./src/lucere/types/chat/completion_create_response.py">object</a></code>
+- <code title="post /chat/completions">client.chat.completions.<a href="./src/lucere/resources/chat/completions.py">create</a>(\*\*<a href="src/lucere/types/chat/completion_create_params.py">params</a>) -> <a href="./src/lucere/types/chat/completion_create_response.py">object</a></code>
 - <code title="post /chat/completions/test">client.chat.completions.<a href="./src/lucere/resources/chat/completions.py">test</a>() -> <a href="./src/lucere/types/chat/completion_test_response.py">object</a></code>
 
 # Token

@@ -31,7 +31,23 @@ from lucere import Lucere
 
 client = Lucere()
 
-completion_create_response = client.chat.completions.create()
+completion_create_response = client.chat.completions.create(
+    messages=[
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+    ],
+    model="string",
+)
 ```
 
 While you can provide a `bearer_token` keyword argument,
@@ -51,7 +67,23 @@ client = AsyncLucere()
 
 
 async def main() -> None:
-    completion_create_response = await client.chat.completions.create()
+    completion_create_response = await client.chat.completions.create(
+        messages=[
+            {
+                "role": "string",
+                "content": "string",
+            },
+            {
+                "role": "string",
+                "content": "string",
+            },
+            {
+                "role": "string",
+                "content": "string",
+            },
+        ],
+        model="string",
+    )
 
 
 asyncio.run(main())
@@ -84,7 +116,23 @@ from lucere import Lucere
 client = Lucere()
 
 try:
-    client.chat.completions.create()
+    client.chat.completions.create(
+        messages=[
+            {
+                "role": "string",
+                "content": "string",
+            },
+            {
+                "role": "string",
+                "content": "string",
+            },
+            {
+                "role": "string",
+                "content": "string",
+            },
+        ],
+        model="string",
+    )
 except lucere.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
@@ -127,7 +175,23 @@ client = Lucere(
 )
 
 # Or, configure per-request:
-client.with_options(max_retries=5).chat.completions.create()
+client.with_options(max_retries=5).chat.completions.create(
+    messages=[
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+    ],
+    model="string",
+)
 ```
 
 ### Timeouts
@@ -150,7 +214,23 @@ client = Lucere(
 )
 
 # Override per-request:
-client.with_options(timeout=5.0).chat.completions.create()
+client.with_options(timeout=5.0).chat.completions.create(
+    messages=[
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+    ],
+    model="string",
+)
 ```
 
 On timeout, an `APITimeoutError` is thrown.
@@ -189,7 +269,19 @@ The "raw" Response object can be accessed by prefixing `.with_raw_response.` to 
 from lucere import Lucere
 
 client = Lucere()
-response = client.chat.completions.with_raw_response.create()
+response = client.chat.completions.with_raw_response.create(
+    messages=[{
+        "role": "string",
+        "content": "string",
+    }, {
+        "role": "string",
+        "content": "string",
+    }, {
+        "role": "string",
+        "content": "string",
+    }],
+    model="string",
+)
 print(response.headers.get('X-My-Header'))
 
 completion = response.parse()  # get the object that `chat.completions.create()` would have returned
@@ -207,7 +299,23 @@ The above interface eagerly reads the full response body when you make the reque
 To stream the response body, use `.with_streaming_response` instead, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()` or `.parse()`. In the async client, these are async methods.
 
 ```python
-with client.chat.completions.with_streaming_response.create() as response:
+with client.chat.completions.with_streaming_response.create(
+    messages=[
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+        {
+            "role": "string",
+            "content": "string",
+        },
+    ],
+    model="string",
+) as response:
     print(response.headers.get("X-My-Header"))
 
     for line in response.iter_lines():

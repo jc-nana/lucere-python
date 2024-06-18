@@ -18,12 +18,92 @@ class TestCompletions:
 
     @parametrize
     def test_method_create(self, client: Lucere) -> None:
-        completion = client.chat.completions.create()
+        completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        )
+        assert_matches_type(object, completion, path=["response"])
+
+    @parametrize
+    def test_method_create_with_all_params(self, client: Lucere) -> None:
+        completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+            ],
+            model="string",
+            attachments=[
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+            ],
+            max_tokens=0,
+            stream=True,
+            temperature=0,
+            user="string",
+        )
         assert_matches_type(object, completion, path=["response"])
 
     @parametrize
     def test_raw_response_create(self, client: Lucere) -> None:
-        response = client.chat.completions.with_raw_response.create()
+        response = client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -32,7 +112,23 @@ class TestCompletions:
 
     @parametrize
     def test_streaming_response_create(self, client: Lucere) -> None:
-        with client.chat.completions.with_streaming_response.create() as response:
+        with client.chat.completions.with_streaming_response.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
@@ -72,12 +168,92 @@ class TestAsyncCompletions:
 
     @parametrize
     async def test_method_create(self, async_client: AsyncLucere) -> None:
-        completion = await async_client.chat.completions.create()
+        completion = await async_client.chat.completions.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        )
+        assert_matches_type(object, completion, path=["response"])
+
+    @parametrize
+    async def test_method_create_with_all_params(self, async_client: AsyncLucere) -> None:
+        completion = await async_client.chat.completions.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                    "name": "string",
+                },
+            ],
+            model="string",
+            attachments=[
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+                {
+                    "type": "string",
+                    "download_url": "string",
+                    "filename": "string",
+                    "description": "string",
+                },
+            ],
+            max_tokens=0,
+            stream=True,
+            temperature=0,
+            user="string",
+        )
         assert_matches_type(object, completion, path=["response"])
 
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncLucere) -> None:
-        response = await async_client.chat.completions.with_raw_response.create()
+        response = await async_client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -86,7 +262,23 @@ class TestAsyncCompletions:
 
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncLucere) -> None:
-        async with async_client.chat.completions.with_streaming_response.create() as response:
+        async with async_client.chat.completions.with_streaming_response.create(
+            messages=[
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+                {
+                    "role": "string",
+                    "content": "string",
+                },
+            ],
+            model="string",
+        ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
