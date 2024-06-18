@@ -25,7 +25,7 @@ from ._utils import (
 )
 from ._version import __version__
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
-from ._exceptions import APIStatusError
+from ._exceptions import LucereError, APIStatusError
 from ._base_client import (
     DEFAULT_MAX_RETRIES,
     SyncAPIClient,
@@ -47,15 +47,18 @@ __all__ = [
 
 class Lucere(SyncAPIClient):
     models: resources.ModelsResource
-    chat_completions: resources.ChatCompletionsResource
+    chat: resources.ChatResource
+    token: resources.TokenResource
     with_raw_response: LucereWithRawResponse
     with_streaming_response: LucereWithStreamedResponse
 
     # client options
+    bearer_token: str
 
     def __init__(
         self,
         *,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -75,7 +78,18 @@ class Lucere(SyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new synchronous lucere client instance."""
+        """Construct a new synchronous lucere client instance.
+
+        This automatically infers the `bearer_token` argument from the `LUCERE_BEARER_TOKEN` environment variable if it is not provided.
+        """
+        if bearer_token is None:
+            bearer_token = os.environ.get("LUCERE_BEARER_TOKEN")
+        if bearer_token is None:
+            raise LucereError(
+                "The bearer_token client option must be set either by passing bearer_token to the client or by setting the LUCERE_BEARER_TOKEN environment variable"
+            )
+        self.bearer_token = bearer_token
+
         if base_url is None:
             base_url = os.environ.get("LUCERE_BASE_URL")
         if base_url is None:
@@ -93,7 +107,8 @@ class Lucere(SyncAPIClient):
         )
 
         self.models = resources.ModelsResource(self)
-        self.chat_completions = resources.ChatCompletionsResource(self)
+        self.chat = resources.ChatResource(self)
+        self.token = resources.TokenResource(self)
         self.with_raw_response = LucereWithRawResponse(self)
         self.with_streaming_response = LucereWithStreamedResponse(self)
 
@@ -101,6 +116,12 @@ class Lucere(SyncAPIClient):
     @override
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
+
+    @property
+    @override
+    def auth_headers(self) -> dict[str, str]:
+        bearer_token = self.bearer_token
+        return {"Authorization": f"Bearer {bearer_token}"}
 
     @property
     @override
@@ -114,6 +135,7 @@ class Lucere(SyncAPIClient):
     def copy(
         self,
         *,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.Client | None = None,
@@ -147,6 +169,7 @@ class Lucere(SyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
+            bearer_token=bearer_token or self.bearer_token,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -196,15 +219,18 @@ class Lucere(SyncAPIClient):
 
 class AsyncLucere(AsyncAPIClient):
     models: resources.AsyncModelsResource
-    chat_completions: resources.AsyncChatCompletionsResource
+    chat: resources.AsyncChatResource
+    token: resources.AsyncTokenResource
     with_raw_response: AsyncLucereWithRawResponse
     with_streaming_response: AsyncLucereWithStreamedResponse
 
     # client options
+    bearer_token: str
 
     def __init__(
         self,
         *,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -224,7 +250,18 @@ class AsyncLucere(AsyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new async lucere client instance."""
+        """Construct a new async lucere client instance.
+
+        This automatically infers the `bearer_token` argument from the `LUCERE_BEARER_TOKEN` environment variable if it is not provided.
+        """
+        if bearer_token is None:
+            bearer_token = os.environ.get("LUCERE_BEARER_TOKEN")
+        if bearer_token is None:
+            raise LucereError(
+                "The bearer_token client option must be set either by passing bearer_token to the client or by setting the LUCERE_BEARER_TOKEN environment variable"
+            )
+        self.bearer_token = bearer_token
+
         if base_url is None:
             base_url = os.environ.get("LUCERE_BASE_URL")
         if base_url is None:
@@ -242,7 +279,8 @@ class AsyncLucere(AsyncAPIClient):
         )
 
         self.models = resources.AsyncModelsResource(self)
-        self.chat_completions = resources.AsyncChatCompletionsResource(self)
+        self.chat = resources.AsyncChatResource(self)
+        self.token = resources.AsyncTokenResource(self)
         self.with_raw_response = AsyncLucereWithRawResponse(self)
         self.with_streaming_response = AsyncLucereWithStreamedResponse(self)
 
@@ -250,6 +288,12 @@ class AsyncLucere(AsyncAPIClient):
     @override
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
+
+    @property
+    @override
+    def auth_headers(self) -> dict[str, str]:
+        bearer_token = self.bearer_token
+        return {"Authorization": f"Bearer {bearer_token}"}
 
     @property
     @override
@@ -263,6 +307,7 @@ class AsyncLucere(AsyncAPIClient):
     def copy(
         self,
         *,
+        bearer_token: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.AsyncClient | None = None,
@@ -296,6 +341,7 @@ class AsyncLucere(AsyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
+            bearer_token=bearer_token or self.bearer_token,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -346,25 +392,29 @@ class AsyncLucere(AsyncAPIClient):
 class LucereWithRawResponse:
     def __init__(self, client: Lucere) -> None:
         self.models = resources.ModelsResourceWithRawResponse(client.models)
-        self.chat_completions = resources.ChatCompletionsResourceWithRawResponse(client.chat_completions)
+        self.chat = resources.ChatResourceWithRawResponse(client.chat)
+        self.token = resources.TokenResourceWithRawResponse(client.token)
 
 
 class AsyncLucereWithRawResponse:
     def __init__(self, client: AsyncLucere) -> None:
         self.models = resources.AsyncModelsResourceWithRawResponse(client.models)
-        self.chat_completions = resources.AsyncChatCompletionsResourceWithRawResponse(client.chat_completions)
+        self.chat = resources.AsyncChatResourceWithRawResponse(client.chat)
+        self.token = resources.AsyncTokenResourceWithRawResponse(client.token)
 
 
 class LucereWithStreamedResponse:
     def __init__(self, client: Lucere) -> None:
         self.models = resources.ModelsResourceWithStreamingResponse(client.models)
-        self.chat_completions = resources.ChatCompletionsResourceWithStreamingResponse(client.chat_completions)
+        self.chat = resources.ChatResourceWithStreamingResponse(client.chat)
+        self.token = resources.TokenResourceWithStreamingResponse(client.token)
 
 
 class AsyncLucereWithStreamedResponse:
     def __init__(self, client: AsyncLucere) -> None:
         self.models = resources.AsyncModelsResourceWithStreamingResponse(client.models)
-        self.chat_completions = resources.AsyncChatCompletionsResourceWithStreamingResponse(client.chat_completions)
+        self.chat = resources.AsyncChatResourceWithStreamingResponse(client.chat)
+        self.token = resources.AsyncTokenResourceWithStreamingResponse(client.token)
 
 
 Client = Lucere

@@ -15,9 +15,12 @@ The REST API documentation can be found [on docs.lucere.com](https://docs.lucere
 ## Installation
 
 ```sh
-# install from PyPI
-pip install --pre lucere
+# install from this staging repo
+pip install git+ssh://git@github.com/stainless-sdks/lucere-python.git
 ```
+
+> [!NOTE]
+> Once this package is [published to PyPI](https://app.stainlessapi.com/docs/guides/publish), this will become: `pip install --pre lucere`
 
 ## Usage
 
@@ -28,8 +31,13 @@ from lucere import Lucere
 
 client = Lucere()
 
-chat_completion_create_response = client.chat_completions.create()
+completion_create_response = client.chat.completions.create()
 ```
+
+While you can provide a `bearer_token` keyword argument,
+we recommend using [python-dotenv](https://pypi.org/project/python-dotenv/)
+to add `LUCERE_BEARER_TOKEN="My Bearer Token"` to your `.env` file
+so that your Bearer Token is not stored in source control.
 
 ## Async usage
 
@@ -43,7 +51,7 @@ client = AsyncLucere()
 
 
 async def main() -> None:
-    chat_completion_create_response = await client.chat_completions.create()
+    completion_create_response = await client.chat.completions.create()
 
 
 asyncio.run(main())
@@ -76,7 +84,7 @@ from lucere import Lucere
 client = Lucere()
 
 try:
-    client.chat_completions.create()
+    client.chat.completions.create()
 except lucere.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
@@ -119,7 +127,7 @@ client = Lucere(
 )
 
 # Or, configure per-request:
-client.with_options(max_retries=5).chat_completions.create()
+client.with_options(max_retries=5).chat.completions.create()
 ```
 
 ### Timeouts
@@ -142,7 +150,7 @@ client = Lucere(
 )
 
 # Override per-request:
-client.with_options(timeout=5.0).chat_completions.create()
+client.with_options(timeout=5.0).chat.completions.create()
 ```
 
 On timeout, an `APITimeoutError` is thrown.
@@ -181,16 +189,16 @@ The "raw" Response object can be accessed by prefixing `.with_raw_response.` to 
 from lucere import Lucere
 
 client = Lucere()
-response = client.chat_completions.with_raw_response.create()
+response = client.chat.completions.with_raw_response.create()
 print(response.headers.get('X-My-Header'))
 
-chat_completion = response.parse()  # get the object that `chat_completions.create()` would have returned
-print(chat_completion)
+completion = response.parse()  # get the object that `chat.completions.create()` would have returned
+print(completion)
 ```
 
-These methods return an [`APIResponse`](https://github.com/jc-nana/lucere-python/tree/main/src/lucere/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/stainless-sdks/lucere-python/tree/main/src/lucere/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/jc-nana/lucere-python/tree/main/src/lucere/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/stainless-sdks/lucere-python/tree/main/src/lucere/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -199,7 +207,7 @@ The above interface eagerly reads the full response body when you make the reque
 To stream the response body, use `.with_streaming_response` instead, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()` or `.parse()`. In the async client, these are async methods.
 
 ```python
-with client.chat_completions.with_streaming_response.create() as response:
+with client.chat.completions.with_streaming_response.create() as response:
     print(response.headers.get("X-My-Header"))
 
     for line in response.iter_lines():
@@ -278,7 +286,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/jc-nana/lucere-python/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/lucere-python/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

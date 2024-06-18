@@ -4,30 +4,30 @@ from __future__ import annotations
 
 import httpx
 
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
-from .._compat import cached_property
-from .._resource import SyncAPIResource, AsyncAPIResource
-from .._response import (
+from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._compat import cached_property
+from ..._resource import SyncAPIResource, AsyncAPIResource
+from ..._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from .._base_client import (
+from ..._base_client import (
     make_request_options,
 )
 
-__all__ = ["ChatCompletionsResource", "AsyncChatCompletionsResource"]
+__all__ = ["CompletionsResource", "AsyncCompletionsResource"]
 
 
-class ChatCompletionsResource(SyncAPIResource):
+class CompletionsResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> ChatCompletionsResourceWithRawResponse:
-        return ChatCompletionsResourceWithRawResponse(self)
+    def with_raw_response(self) -> CompletionsResourceWithRawResponse:
+        return CompletionsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> ChatCompletionsResourceWithStreamingResponse:
-        return ChatCompletionsResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> CompletionsResourceWithStreamingResponse:
+        return CompletionsResourceWithStreamingResponse(self)
 
     def create(
         self,
@@ -68,14 +68,14 @@ class ChatCompletionsResource(SyncAPIResource):
         )
 
 
-class AsyncChatCompletionsResource(AsyncAPIResource):
+class AsyncCompletionsResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncChatCompletionsResourceWithRawResponse:
-        return AsyncChatCompletionsResourceWithRawResponse(self)
+    def with_raw_response(self) -> AsyncCompletionsResourceWithRawResponse:
+        return AsyncCompletionsResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncChatCompletionsResourceWithStreamingResponse:
-        return AsyncChatCompletionsResourceWithStreamingResponse(self)
+    def with_streaming_response(self) -> AsyncCompletionsResourceWithStreamingResponse:
+        return AsyncCompletionsResourceWithStreamingResponse(self)
 
     async def create(
         self,
@@ -116,49 +116,49 @@ class AsyncChatCompletionsResource(AsyncAPIResource):
         )
 
 
-class ChatCompletionsResourceWithRawResponse:
-    def __init__(self, chat_completions: ChatCompletionsResource) -> None:
-        self._chat_completions = chat_completions
+class CompletionsResourceWithRawResponse:
+    def __init__(self, completions: CompletionsResource) -> None:
+        self._completions = completions
 
         self.create = to_raw_response_wrapper(
-            chat_completions.create,
+            completions.create,
         )
         self.test = to_raw_response_wrapper(
-            chat_completions.test,
+            completions.test,
         )
 
 
-class AsyncChatCompletionsResourceWithRawResponse:
-    def __init__(self, chat_completions: AsyncChatCompletionsResource) -> None:
-        self._chat_completions = chat_completions
+class AsyncCompletionsResourceWithRawResponse:
+    def __init__(self, completions: AsyncCompletionsResource) -> None:
+        self._completions = completions
 
         self.create = async_to_raw_response_wrapper(
-            chat_completions.create,
+            completions.create,
         )
         self.test = async_to_raw_response_wrapper(
-            chat_completions.test,
+            completions.test,
         )
 
 
-class ChatCompletionsResourceWithStreamingResponse:
-    def __init__(self, chat_completions: ChatCompletionsResource) -> None:
-        self._chat_completions = chat_completions
+class CompletionsResourceWithStreamingResponse:
+    def __init__(self, completions: CompletionsResource) -> None:
+        self._completions = completions
 
         self.create = to_streamed_response_wrapper(
-            chat_completions.create,
+            completions.create,
         )
         self.test = to_streamed_response_wrapper(
-            chat_completions.test,
+            completions.test,
         )
 
 
-class AsyncChatCompletionsResourceWithStreamingResponse:
-    def __init__(self, chat_completions: AsyncChatCompletionsResource) -> None:
-        self._chat_completions = chat_completions
+class AsyncCompletionsResourceWithStreamingResponse:
+    def __init__(self, completions: AsyncCompletionsResource) -> None:
+        self._completions = completions
 
         self.create = async_to_streamed_response_wrapper(
-            chat_completions.create,
+            completions.create,
         )
         self.test = async_to_streamed_response_wrapper(
-            chat_completions.test,
+            completions.test,
         )

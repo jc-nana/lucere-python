@@ -1,5 +1,21 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+from .chat import (
+    ChatResource,
+    AsyncChatResource,
+    ChatResourceWithRawResponse,
+    AsyncChatResourceWithRawResponse,
+    ChatResourceWithStreamingResponse,
+    AsyncChatResourceWithStreamingResponse,
+)
+from .token import (
+    TokenResource,
+    AsyncTokenResource,
+    TokenResourceWithRawResponse,
+    AsyncTokenResourceWithRawResponse,
+    TokenResourceWithStreamingResponse,
+    AsyncTokenResourceWithStreamingResponse,
+)
 from .models import (
     ModelsResource,
     AsyncModelsResource,
@@ -7,14 +23,6 @@ from .models import (
     AsyncModelsResourceWithRawResponse,
     ModelsResourceWithStreamingResponse,
     AsyncModelsResourceWithStreamingResponse,
-)
-from .chat_completions import (
-    ChatCompletionsResource,
-    AsyncChatCompletionsResource,
-    ChatCompletionsResourceWithRawResponse,
-    AsyncChatCompletionsResourceWithRawResponse,
-    ChatCompletionsResourceWithStreamingResponse,
-    AsyncChatCompletionsResourceWithStreamingResponse,
 )
 
 __all__ = [
@@ -24,10 +32,16 @@ __all__ = [
     "AsyncModelsResourceWithRawResponse",
     "ModelsResourceWithStreamingResponse",
     "AsyncModelsResourceWithStreamingResponse",
-    "ChatCompletionsResource",
-    "AsyncChatCompletionsResource",
-    "ChatCompletionsResourceWithRawResponse",
-    "AsyncChatCompletionsResourceWithRawResponse",
-    "ChatCompletionsResourceWithStreamingResponse",
-    "AsyncChatCompletionsResourceWithStreamingResponse",
+    "ChatResource",
+    "AsyncChatResource",
+    "ChatResourceWithRawResponse",
+    "AsyncChatResourceWithRawResponse",
+    "ChatResourceWithStreamingResponse",
+    "AsyncChatResourceWithStreamingResponse",
+    "TokenResource",
+    "AsyncTokenResource",
+    "TokenResourceWithRawResponse",
+    "AsyncTokenResourceWithRawResponse",
+    "TokenResourceWithStreamingResponse",
+    "AsyncTokenResourceWithStreamingResponse",
 ]
