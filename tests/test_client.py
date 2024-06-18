@@ -722,7 +722,29 @@ class TestLucere:
 
         with pytest.raises(APITimeoutError):
             self.client.post(
-                "/chat/completions", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/chat/completions",
+                body=cast(
+                    object,
+                    dict(
+                        messages=[
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                        ],
+                        model="string",
+                    ),
+                ),
+                cast_to=httpx.Response,
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -734,7 +756,29 @@ class TestLucere:
 
         with pytest.raises(APIStatusError):
             self.client.post(
-                "/chat/completions", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/chat/completions",
+                body=cast(
+                    object,
+                    dict(
+                        messages=[
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                        ],
+                        model="string",
+                    ),
+                ),
+                cast_to=httpx.Response,
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1422,7 +1466,29 @@ class TestAsyncLucere:
 
         with pytest.raises(APITimeoutError):
             await self.client.post(
-                "/chat/completions", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/chat/completions",
+                body=cast(
+                    object,
+                    dict(
+                        messages=[
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                        ],
+                        model="string",
+                    ),
+                ),
+                cast_to=httpx.Response,
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1434,7 +1500,29 @@ class TestAsyncLucere:
 
         with pytest.raises(APIStatusError):
             await self.client.post(
-                "/chat/completions", cast_to=httpx.Response, options={"headers": {RAW_RESPONSE_HEADER: "stream"}}
+                "/chat/completions",
+                body=cast(
+                    object,
+                    dict(
+                        messages=[
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                            {
+                                "role": "string",
+                                "content": "string",
+                            },
+                        ],
+                        model="string",
+                    ),
+                ),
+                cast_to=httpx.Response,
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
