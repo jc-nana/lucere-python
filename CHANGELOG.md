@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.1 (2024-06-18)
+
+Full Changelog: [v0.0.1-alpha.1...v0.1.0-alpha.1](https://github.com/jc-nana/lucere-python/compare/v0.0.1-alpha.1...v0.1.0-alpha.1)
+
+### Features
+
+* **api:** update via SDK Studio ([#4](https://github.com/jc-nana/lucere-python/issues/4)) ([d508e5b](https://github.com/jc-nana/lucere-python/commit/d508e5b81a4b3f8cdf12c504fa322f4d02599c5d))
+
 ## 0.0.1-alpha.1 (2024-06-18)
 
 Full Changelog: [v0.0.1-alpha.0...v0.0.1-alpha.1](https://github.com/jc-nana/lucere-python/compare/v0.0.1-alpha.0...v0.0.1-alpha.1)
