@@ -79,7 +79,7 @@ class Lucere(SyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("LUCERE_BASE_URL")
         if base_url is None:
-            base_url = f"https://localhost:8080/test-api"
+            base_url = f"https://8001-01hte6zpnr69wytp35ev5jdkka.cloudspaces.litng.ai"
 
         super().__init__(
             version=__version__,
@@ -228,7 +228,7 @@ class AsyncLucere(AsyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("LUCERE_BASE_URL")
         if base_url is None:
-            base_url = f"https://localhost:8080/test-api"
+            base_url = f"https://8001-01hte6zpnr69wytp35ev5jdkka.cloudspaces.litng.ai"
 
         super().__init__(
             version=__version__,
