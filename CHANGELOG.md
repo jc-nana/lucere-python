@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2024-06-18)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#7](https://github.com/jc-nana/lucere-python/issues/7)) ([f20a45f](https://github.com/jc-nana/lucere-python/commit/f20a45fa3d6c84fcd7e86f4da51a961e0bcf5f1b))
+
 ## 0.1.0-alpha.1 (2024-06-18)
 
 Full Changelog: [v0.0.1-alpha.1...v0.1.0-alpha.1](https://github.com/jc-nana/lucere-python/compare/v0.0.1-alpha.1...v0.1.0-alpha.1)
