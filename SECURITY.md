@@ -20,7 +20,7 @@ or products provided by Lucere please follow the respective company's security r
 
 ### Lucere Terms and Policies
 
-Please contact dev-feedback@lucere.com for any questions or concerns regarding security of our services.
+Please contact hello@lucere.app for any questions or concerns regarding security of our services.
 
 ---
 
