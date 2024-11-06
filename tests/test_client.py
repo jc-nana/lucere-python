@@ -10,6 +10,7 @@ import inspect
 import tracemalloc
 from typing import Any, Union, cast
 from unittest import mock
+from typing_extensions import Literal
 
 import httpx
 import pytest
@@ -17,6 +18,7 @@ from respx import MockRouter
 from pydantic import ValidationError
 
 from lucere import Lucere, AsyncLucere, APIResponseValidationError
+from lucere._types import Omit
 from lucere._models import BaseModel, FinalRequestOptions
 from lucere._constants import RAW_RESPONSE_HEADER
 from lucere._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
@@ -704,6 +706,7 @@ class TestLucere:
             [3, "", 0.5],
             [2, "", 0.5 * 2.0],
             [1, "", 0.5 * 4.0],
+            [-1100, "", 8],  # test large number potentially overflowing
         ],
     )
     @mock.patch("time.time", mock.MagicMock(return_value=1696004797))
@@ -728,19 +731,19 @@ class TestLucere:
                     dict(
                         messages=[
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                         ],
-                        model="string",
+                        model="model",
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -762,19 +765,19 @@ class TestLucere:
                     dict(
                         messages=[
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                         ],
-                        model="string",
+                        model="model",
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -782,6 +785,133 @@ class TestLucere:
             )
 
         assert _get_open_connections(self.client) == 0
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    @pytest.mark.parametrize("failure_mode", ["status", "exception"])
+    def test_retries_taken(
+        self,
+        client: Lucere,
+        failures_before_success: int,
+        failure_mode: Literal["status", "exception"],
+        respx_mock: MockRouter,
+    ) -> None:
+        client = client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                if failure_mode == "exception":
+                    raise RuntimeError("oops")
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+        )
+
+        assert response.retries_taken == failures_before_success
+        assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    def test_omit_retry_count_header(
+        self, client: Lucere, failures_before_success: int, respx_mock: MockRouter
+    ) -> None:
+        client = client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+            extra_headers={"x-stainless-retry-count": Omit()},
+        )
+
+        assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    def test_overwrite_retry_count_header(
+        self, client: Lucere, failures_before_success: int, respx_mock: MockRouter
+    ) -> None:
+        client = client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+            extra_headers={"x-stainless-retry-count": "42"},
+        )
+
+        assert response.http_request.headers.get("x-stainless-retry-count") == "42"
 
 
 class TestAsyncLucere:
@@ -1447,6 +1577,7 @@ class TestAsyncLucere:
             [3, "", 0.5],
             [2, "", 0.5 * 2.0],
             [1, "", 0.5 * 4.0],
+            [-1100, "", 8],  # test large number potentially overflowing
         ],
     )
     @mock.patch("time.time", mock.MagicMock(return_value=1696004797))
@@ -1472,19 +1603,19 @@ class TestAsyncLucere:
                     dict(
                         messages=[
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                         ],
-                        model="string",
+                        model="model",
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -1506,19 +1637,19 @@ class TestAsyncLucere:
                     dict(
                         messages=[
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                             {
-                                "role": "string",
-                                "content": "string",
+                                "content": "content",
+                                "role": "role",
                             },
                         ],
-                        model="string",
+                        model="model",
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -1526,3 +1657,133 @@ class TestAsyncLucere:
             )
 
         assert _get_open_connections(self.client) == 0
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("failure_mode", ["status", "exception"])
+    async def test_retries_taken(
+        self,
+        async_client: AsyncLucere,
+        failures_before_success: int,
+        failure_mode: Literal["status", "exception"],
+        respx_mock: MockRouter,
+    ) -> None:
+        client = async_client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                if failure_mode == "exception":
+                    raise RuntimeError("oops")
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = await client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+        )
+
+        assert response.retries_taken == failures_before_success
+        assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    @pytest.mark.asyncio
+    async def test_omit_retry_count_header(
+        self, async_client: AsyncLucere, failures_before_success: int, respx_mock: MockRouter
+    ) -> None:
+        client = async_client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = await client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+            extra_headers={"x-stainless-retry-count": Omit()},
+        )
+
+        assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
+
+    @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
+    @mock.patch("lucere._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
+    @pytest.mark.asyncio
+    async def test_overwrite_retry_count_header(
+        self, async_client: AsyncLucere, failures_before_success: int, respx_mock: MockRouter
+    ) -> None:
+        client = async_client.with_options(max_retries=4)
+
+        nb_retries = 0
+
+        def retry_handler(_request: httpx.Request) -> httpx.Response:
+            nonlocal nb_retries
+            if nb_retries < failures_before_success:
+                nb_retries += 1
+                return httpx.Response(500)
+            return httpx.Response(200)
+
+        respx_mock.post("/chat/completions").mock(side_effect=retry_handler)
+
+        response = await client.chat.completions.with_raw_response.create(
+            messages=[
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+                {
+                    "content": "content",
+                    "role": "role",
+                },
+            ],
+            model="model",
+            extra_headers={"x-stainless-retry-count": "42"},
+        )
+
+        assert response.http_request.headers.get("x-stainless-retry-count") == "42"

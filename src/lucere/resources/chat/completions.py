@@ -20,9 +20,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ...types.chat import completion_create_params
-from ..._base_client import (
-    make_request_options,
-)
+from ..._base_client import make_request_options
 
 __all__ = ["CompletionsResource", "AsyncCompletionsResource"]
 
@@ -30,10 +28,21 @@ __all__ = ["CompletionsResource", "AsyncCompletionsResource"]
 class CompletionsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> CompletionsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#accessing-raw-response-data-eg-headers
+        """
         return CompletionsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> CompletionsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#with_streaming_response
+        """
         return CompletionsResourceWithStreamingResponse(self)
 
     def create(
@@ -108,10 +117,21 @@ class CompletionsResource(SyncAPIResource):
 class AsyncCompletionsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncCompletionsResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncCompletionsResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncCompletionsResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#with_streaming_response
+        """
         return AsyncCompletionsResourceWithStreamingResponse(self)
 
     async def create(
