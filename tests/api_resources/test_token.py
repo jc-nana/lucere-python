@@ -20,16 +20,16 @@ class TestToken:
     @parametrize
     def test_method_generate(self, client: Lucere) -> None:
         token = client.token.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         )
         assert_matches_type(TokenResponse, token, path=["response"])
 
     @parametrize
     def test_raw_response_generate(self, client: Lucere) -> None:
         response = client.token.with_raw_response.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         )
 
         assert response.is_closed is True
@@ -40,8 +40,8 @@ class TestToken:
     @parametrize
     def test_streaming_response_generate(self, client: Lucere) -> None:
         with client.token.with_streaming_response.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -83,16 +83,16 @@ class TestAsyncToken:
     @parametrize
     async def test_method_generate(self, async_client: AsyncLucere) -> None:
         token = await async_client.token.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         )
         assert_matches_type(TokenResponse, token, path=["response"])
 
     @parametrize
     async def test_raw_response_generate(self, async_client: AsyncLucere) -> None:
         response = await async_client.token.with_raw_response.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         )
 
         assert response.is_closed is True
@@ -103,8 +103,8 @@ class TestAsyncToken:
     @parametrize
     async def test_streaming_response_generate(self, async_client: AsyncLucere) -> None:
         async with async_client.token.with_streaming_response.generate(
-            role="string",
-            user_id="string",
+            role="role",
+            user_id="user_id",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
