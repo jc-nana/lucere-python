@@ -33,15 +33,7 @@ completion = client.chat.completions.create(
         {
             "content": "content",
             "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
+        }
     ],
     model="model",
 )
@@ -69,15 +61,7 @@ async def main() -> None:
             {
                 "content": "content",
                 "role": "role",
-            },
-            {
-                "content": "content",
-                "role": "role",
-            },
-            {
-                "content": "content",
-                "role": "role",
-            },
+            }
         ],
         model="model",
     )
@@ -118,15 +102,7 @@ try:
             {
                 "content": "content",
                 "role": "role",
-            },
-            {
-                "content": "content",
-                "role": "role",
-            },
-            {
-                "content": "content",
-                "role": "role",
-            },
+            }
         ],
         model="model",
     )
@@ -177,15 +153,7 @@ client.with_options(max_retries=5).chat.completions.create(
         {
             "content": "content",
             "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
+        }
     ],
     model="model",
 )
@@ -216,15 +184,7 @@ client.with_options(timeout=5.0).chat.completions.create(
         {
             "content": "content",
             "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
+        }
     ],
     model="model",
 )
@@ -270,12 +230,6 @@ response = client.chat.completions.with_raw_response.create(
     messages=[{
         "content": "content",
         "role": "role",
-    }, {
-        "content": "content",
-        "role": "role",
-    }, {
-        "content": "content",
-        "role": "role",
     }],
     model="model",
 )
@@ -301,15 +255,7 @@ with client.chat.completions.with_streaming_response.create(
         {
             "content": "content",
             "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
-        {
-            "content": "content",
-            "role": "role",
-        },
+        }
     ],
     model="model",
 ) as response:

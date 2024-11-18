@@ -23,15 +23,7 @@ class TestCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -45,17 +37,7 @@ class TestCompletions:
                     "content": "content",
                     "role": "role",
                     "name": "name",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                    "name": "name",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                    "name": "name",
-                },
+                }
             ],
             model="model",
             attachments=[
@@ -64,19 +46,7 @@ class TestCompletions:
                     "filename": "filename",
                     "type": "type",
                     "description": "description",
-                },
-                {
-                    "download_url": "downloadUrl",
-                    "filename": "filename",
-                    "type": "type",
-                    "description": "description",
-                },
-                {
-                    "download_url": "downloadUrl",
-                    "filename": "filename",
-                    "type": "type",
-                    "description": "description",
-                },
+                }
             ],
             max_tokens=0,
             stream=True,
@@ -92,15 +62,7 @@ class TestCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -117,15 +79,7 @@ class TestCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         ) as response:
@@ -173,15 +127,7 @@ class TestAsyncCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -195,17 +141,7 @@ class TestAsyncCompletions:
                     "content": "content",
                     "role": "role",
                     "name": "name",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                    "name": "name",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                    "name": "name",
-                },
+                }
             ],
             model="model",
             attachments=[
@@ -214,19 +150,7 @@ class TestAsyncCompletions:
                     "filename": "filename",
                     "type": "type",
                     "description": "description",
-                },
-                {
-                    "download_url": "downloadUrl",
-                    "filename": "filename",
-                    "type": "type",
-                    "description": "description",
-                },
-                {
-                    "download_url": "downloadUrl",
-                    "filename": "filename",
-                    "type": "type",
-                    "description": "description",
-                },
+                }
             ],
             max_tokens=0,
             stream=True,
@@ -242,15 +166,7 @@ class TestAsyncCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -267,15 +183,7 @@ class TestAsyncCompletions:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         ) as response:
