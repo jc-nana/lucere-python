@@ -733,15 +733,7 @@ class TestLucere:
                             {
                                 "content": "content",
                                 "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
+                            }
                         ],
                         model="model",
                     ),
@@ -767,15 +759,7 @@ class TestLucere:
                             {
                                 "content": "content",
                                 "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
+                            }
                         ],
                         model="model",
                     ),
@@ -817,15 +801,7 @@ class TestLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -857,15 +833,7 @@ class TestLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
             extra_headers={"x-stainless-retry-count": Omit()},
@@ -897,15 +865,7 @@ class TestLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
             extra_headers={"x-stainless-retry-count": "42"},
@@ -1605,15 +1565,7 @@ class TestAsyncLucere:
                             {
                                 "content": "content",
                                 "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
+                            }
                         ],
                         model="model",
                     ),
@@ -1639,15 +1591,7 @@ class TestAsyncLucere:
                             {
                                 "content": "content",
                                 "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
-                            {
-                                "content": "content",
-                                "role": "role",
-                            },
+                            }
                         ],
                         model="model",
                     ),
@@ -1690,15 +1634,7 @@ class TestAsyncLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
         )
@@ -1731,15 +1667,7 @@ class TestAsyncLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
             extra_headers={"x-stainless-retry-count": Omit()},
@@ -1772,15 +1700,7 @@ class TestAsyncLucere:
                 {
                     "content": "content",
                     "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
-                {
-                    "content": "content",
-                    "role": "role",
-                },
+                }
             ],
             model="model",
             extra_headers={"x-stainless-retry-count": "42"},
