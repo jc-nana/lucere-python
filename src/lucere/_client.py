@@ -8,7 +8,7 @@ from typing_extensions import Self, override
 
 import httpx
 
-from . import _exceptions
+from . import resources, _exceptions
 from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
@@ -24,7 +24,6 @@ from ._utils import (
     get_async_library,
 )
 from ._version import __version__
-from .resources import token, models
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import LucereError, APIStatusError
 from ._base_client import (
@@ -32,15 +31,24 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.chat import chat
 
-__all__ = ["Timeout", "Transport", "ProxiesTypes", "RequestOptions", "Lucere", "AsyncLucere", "Client", "AsyncClient"]
+__all__ = [
+    "Timeout",
+    "Transport",
+    "ProxiesTypes",
+    "RequestOptions",
+    "resources",
+    "Lucere",
+    "AsyncLucere",
+    "Client",
+    "AsyncClient",
+]
 
 
 class Lucere(SyncAPIClient):
-    models: models.ModelsResource
-    chat: chat.ChatResource
-    token: token.TokenResource
+    models: resources.ModelsResource
+    chat: resources.ChatResource
+    token: resources.TokenResource
     with_raw_response: LucereWithRawResponse
     with_streaming_response: LucereWithStreamedResponse
 
@@ -98,9 +106,9 @@ class Lucere(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.models = models.ModelsResource(self)
-        self.chat = chat.ChatResource(self)
-        self.token = token.TokenResource(self)
+        self.models = resources.ModelsResource(self)
+        self.chat = resources.ChatResource(self)
+        self.token = resources.TokenResource(self)
         self.with_raw_response = LucereWithRawResponse(self)
         self.with_streaming_response = LucereWithStreamedResponse(self)
 
@@ -210,9 +218,9 @@ class Lucere(SyncAPIClient):
 
 
 class AsyncLucere(AsyncAPIClient):
-    models: models.AsyncModelsResource
-    chat: chat.AsyncChatResource
-    token: token.AsyncTokenResource
+    models: resources.AsyncModelsResource
+    chat: resources.AsyncChatResource
+    token: resources.AsyncTokenResource
     with_raw_response: AsyncLucereWithRawResponse
     with_streaming_response: AsyncLucereWithStreamedResponse
 
@@ -270,9 +278,9 @@ class AsyncLucere(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.models = models.AsyncModelsResource(self)
-        self.chat = chat.AsyncChatResource(self)
-        self.token = token.AsyncTokenResource(self)
+        self.models = resources.AsyncModelsResource(self)
+        self.chat = resources.AsyncChatResource(self)
+        self.token = resources.AsyncTokenResource(self)
         self.with_raw_response = AsyncLucereWithRawResponse(self)
         self.with_streaming_response = AsyncLucereWithStreamedResponse(self)
 
@@ -383,30 +391,30 @@ class AsyncLucere(AsyncAPIClient):
 
 class LucereWithRawResponse:
     def __init__(self, client: Lucere) -> None:
-        self.models = models.ModelsResourceWithRawResponse(client.models)
-        self.chat = chat.ChatResourceWithRawResponse(client.chat)
-        self.token = token.TokenResourceWithRawResponse(client.token)
+        self.models = resources.ModelsResourceWithRawResponse(client.models)
+        self.chat = resources.ChatResourceWithRawResponse(client.chat)
+        self.token = resources.TokenResourceWithRawResponse(client.token)
 
 
 class AsyncLucereWithRawResponse:
     def __init__(self, client: AsyncLucere) -> None:
-        self.models = models.AsyncModelsResourceWithRawResponse(client.models)
-        self.chat = chat.AsyncChatResourceWithRawResponse(client.chat)
-        self.token = token.AsyncTokenResourceWithRawResponse(client.token)
+        self.models = resources.AsyncModelsResourceWithRawResponse(client.models)
+        self.chat = resources.AsyncChatResourceWithRawResponse(client.chat)
+        self.token = resources.AsyncTokenResourceWithRawResponse(client.token)
 
 
 class LucereWithStreamedResponse:
     def __init__(self, client: Lucere) -> None:
-        self.models = models.ModelsResourceWithStreamingResponse(client.models)
-        self.chat = chat.ChatResourceWithStreamingResponse(client.chat)
-        self.token = token.TokenResourceWithStreamingResponse(client.token)
+        self.models = resources.ModelsResourceWithStreamingResponse(client.models)
+        self.chat = resources.ChatResourceWithStreamingResponse(client.chat)
+        self.token = resources.TokenResourceWithStreamingResponse(client.token)
 
 
 class AsyncLucereWithStreamedResponse:
     def __init__(self, client: AsyncLucere) -> None:
-        self.models = models.AsyncModelsResourceWithStreamingResponse(client.models)
-        self.chat = chat.AsyncChatResourceWithStreamingResponse(client.chat)
-        self.token = token.AsyncTokenResourceWithStreamingResponse(client.token)
+        self.models = resources.AsyncModelsResourceWithStreamingResponse(client.models)
+        self.chat = resources.AsyncChatResourceWithStreamingResponse(client.chat)
+        self.token = resources.AsyncTokenResourceWithStreamingResponse(client.token)
 
 
 Client = Lucere
