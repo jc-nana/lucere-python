@@ -21,19 +21,11 @@ class TestCompletions:
         completion = client.chat.completions.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         )
         assert_matches_type(object, completion, path=["response"])
 
@@ -42,46 +34,24 @@ class TestCompletions:
         completion = client.chat.completions.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                    "name": "name",
+                }
             ],
-            model="string",
+            model="model",
             attachments=[
                 {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
-                {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
-                {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
+                    "download_url": "downloadUrl",
+                    "filename": "filename",
+                    "type": "type",
+                    "description": "description",
+                }
             ],
             max_tokens=0,
             stream=True,
             temperature=0,
-            user="string",
+            user="user",
         )
         assert_matches_type(object, completion, path=["response"])
 
@@ -90,19 +60,11 @@ class TestCompletions:
         response = client.chat.completions.with_raw_response.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         )
 
         assert response.is_closed is True
@@ -115,19 +77,11 @@ class TestCompletions:
         with client.chat.completions.with_streaming_response.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -171,19 +125,11 @@ class TestAsyncCompletions:
         completion = await async_client.chat.completions.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         )
         assert_matches_type(object, completion, path=["response"])
 
@@ -192,46 +138,24 @@ class TestAsyncCompletions:
         completion = await async_client.chat.completions.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                    "name": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                    "name": "name",
+                }
             ],
-            model="string",
+            model="model",
             attachments=[
                 {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
-                {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
-                {
-                    "type": "string",
-                    "download_url": "string",
-                    "filename": "string",
-                    "description": "string",
-                },
+                    "download_url": "downloadUrl",
+                    "filename": "filename",
+                    "type": "type",
+                    "description": "description",
+                }
             ],
             max_tokens=0,
             stream=True,
             temperature=0,
-            user="string",
+            user="user",
         )
         assert_matches_type(object, completion, path=["response"])
 
@@ -240,19 +164,11 @@ class TestAsyncCompletions:
         response = await async_client.chat.completions.with_raw_response.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         )
 
         assert response.is_closed is True
@@ -265,19 +181,11 @@ class TestAsyncCompletions:
         async with async_client.chat.completions.with_streaming_response.create(
             messages=[
                 {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
-                {
-                    "role": "string",
-                    "content": "string",
-                },
+                    "content": "content",
+                    "role": "role",
+                }
             ],
-            model="string",
+            model="model",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"

@@ -18,9 +18,7 @@ from .._response import (
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from .._base_client import (
-    make_request_options,
-)
+from .._base_client import make_request_options
 from ..types.token_response import TokenResponse
 from ..types.verify_response import VerifyResponse
 
@@ -30,10 +28,21 @@ __all__ = ["TokenResource", "AsyncTokenResource"]
 class TokenResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> TokenResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#accessing-raw-response-data-eg-headers
+        """
         return TokenResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> TokenResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#with_streaming_response
+        """
         return TokenResourceWithStreamingResponse(self)
 
     def generate(
@@ -98,10 +107,21 @@ class TokenResource(SyncAPIResource):
 class AsyncTokenResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncTokenResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return the
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#accessing-raw-response-data-eg-headers
+        """
         return AsyncTokenResourceWithRawResponse(self)
 
     @cached_property
     def with_streaming_response(self) -> AsyncTokenResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/jc-nana/lucere-python#with_streaming_response
+        """
         return AsyncTokenResourceWithStreamingResponse(self)
 
     async def generate(
