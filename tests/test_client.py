@@ -23,10 +23,12 @@ from pydantic import ValidationError
 
 from lucere import Lucere, AsyncLucere, APIResponseValidationError
 from lucere._types import Omit
+from lucere._utils import maybe_transform
 from lucere._models import BaseModel, FinalRequestOptions
 from lucere._constants import RAW_RESPONSE_HEADER
 from lucere._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
 from lucere._base_client import DEFAULT_TIMEOUT, HTTPX_DEFAULT_TIMEOUT, BaseClient, make_request_options
+from lucere.types.chat.completion_create_params import CompletionCreateParams
 
 from .utils import update_env
 
@@ -732,14 +734,17 @@ class TestLucere:
                 "/chat/completions",
                 body=cast(
                     object,
-                    dict(
-                        messages=[
-                            {
-                                "content": "content",
-                                "role": "role",
-                            }
-                        ],
-                        model="model",
+                    maybe_transform(
+                        dict(
+                            messages=[
+                                {
+                                    "content": "content",
+                                    "role": "role",
+                                }
+                            ],
+                            model="model",
+                        ),
+                        CompletionCreateParams,
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -758,14 +763,17 @@ class TestLucere:
                 "/chat/completions",
                 body=cast(
                     object,
-                    dict(
-                        messages=[
-                            {
-                                "content": "content",
-                                "role": "role",
-                            }
-                        ],
-                        model="model",
+                    maybe_transform(
+                        dict(
+                            messages=[
+                                {
+                                    "content": "content",
+                                    "role": "role",
+                                }
+                            ],
+                            model="model",
+                        ),
+                        CompletionCreateParams,
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -1564,14 +1572,17 @@ class TestAsyncLucere:
                 "/chat/completions",
                 body=cast(
                     object,
-                    dict(
-                        messages=[
-                            {
-                                "content": "content",
-                                "role": "role",
-                            }
-                        ],
-                        model="model",
+                    maybe_transform(
+                        dict(
+                            messages=[
+                                {
+                                    "content": "content",
+                                    "role": "role",
+                                }
+                            ],
+                            model="model",
+                        ),
+                        CompletionCreateParams,
                     ),
                 ),
                 cast_to=httpx.Response,
@@ -1590,14 +1601,17 @@ class TestAsyncLucere:
                 "/chat/completions",
                 body=cast(
                     object,
-                    dict(
-                        messages=[
-                            {
-                                "content": "content",
-                                "role": "role",
-                            }
-                        ],
-                        model="model",
+                    maybe_transform(
+                        dict(
+                            messages=[
+                                {
+                                    "content": "content",
+                                    "role": "role",
+                                }
+                            ],
+                            model="model",
+                        ),
+                        CompletionCreateParams,
                     ),
                 ),
                 cast_to=httpx.Response,
