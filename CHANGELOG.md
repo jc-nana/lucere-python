@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **client:** send `X-Stainless-Read-Timeout` header ([#51](https://github.com/jc-nana/lucere-python/issues/51)) ([26c6baa](https://github.com/jc-nana/lucere-python/commit/26c6baa2e3773790bc6cdfd3084314a1ed264147))
+
+
+### Bug Fixes
+
+* asyncify on non-asyncio runtimes ([#55](https://github.com/jc-nana/lucere-python/issues/55)) ([170f0bf](https://github.com/jc-nana/lucere-python/commit/170f0bf4d6aceeb6fddaaa9b28d79f0e5239f085))
+
+
+### Chores
+
+* **internal:** bummp ruff dependency ([#50](https://github.com/jc-nana/lucere-python/issues/50)) ([810b421](https://github.com/jc-nana/lucere-python/commit/810b4215b3b435f8e17cd65aa69e86dd080f5c0d))
+* **internal:** change default timeout to an int ([#49](https://github.com/jc-nana/lucere-python/issues/49)) ([6da8fbc](https://github.com/jc-nana/lucere-python/commit/6da8fbc9d3dc9f47d9ad5e0886445efd00d2f280))
+* **internal:** codegen related update ([#47](https://github.com/jc-nana/lucere-python/issues/47)) ([8d20908](https://github.com/jc-nana/lucere-python/commit/8d209083fa8cb06b84f8a842167b3195ec0dd26f))
+* **internal:** fix type traversing dictionary params ([#52](https://github.com/jc-nana/lucere-python/issues/52)) ([2b488cc](https://github.com/jc-nana/lucere-python/commit/2b488cc8a4cd680498bfb0d40ba3d31c47dbee94))
+* **internal:** minor type handling changes ([#53](https://github.com/jc-nana/lucere-python/issues/53)) ([2898846](https://github.com/jc-nana/lucere-python/commit/28988462a91dcae88c516ff1e9a4c2a5da960043))
+* **internal:** update client tests ([#54](https://github.com/jc-nana/lucere-python/issues/54)) ([1f7f67e](https://github.com/jc-nana/lucere-python/commit/1f7f67e9b3c08cd0a4202c2f4568d415bd985b2c))
+
 ## 0.1.0-alpha.4 (2025-01-17)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
