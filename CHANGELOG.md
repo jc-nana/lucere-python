@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-02-21)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **client:** allow passing `NotGiven` for body ([#57](https://github.com/jc-nana/lucere-python/issues/57)) ([c69ebd5](https://github.com/jc-nana/lucere-python/commit/c69ebd54cd52329189791b0bbcf7a07ee625f495))
+
+
+### Bug Fixes
+
+* **client:** mark some request bodies as optional ([c69ebd5](https://github.com/jc-nana/lucere-python/commit/c69ebd54cd52329189791b0bbcf7a07ee625f495))
+
 ## 0.1.0-alpha.5 (2025-02-14)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
