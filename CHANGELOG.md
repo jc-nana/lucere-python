@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-02-22)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#60](https://github.com/jc-nana/lucere-python/issues/60)) ([707782b](https://github.com/jc-nana/lucere-python/commit/707782b546b2d9c12028ce78654d66dff923dc1a))
+
 ## 0.1.0-alpha.6 (2025-02-21)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
