@@ -70,7 +70,7 @@ class Lucere(SyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new synchronous lucere client instance.
+        """Construct a new synchronous Lucere client instance.
 
         This automatically infers the `bearer_token` argument from the `LUCERE_BEARER_TOKEN` environment variable if it is not provided.
         """
@@ -242,7 +242,7 @@ class AsyncLucere(AsyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new async lucere client instance.
+        """Construct a new async AsyncLucere client instance.
 
         This automatically infers the `bearer_token` argument from the `LUCERE_BEARER_TOKEN` environment variable if it is not provided.
         """
