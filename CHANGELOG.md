@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-03-15)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Bug Fixes
+
+* **types:** handle more discriminated union shapes ([#70](https://github.com/jc-nana/lucere-python/issues/70)) ([5c83b2f](https://github.com/jc-nana/lucere-python/commit/5c83b2fb6747e8f5ba8d0543afcd253df2703cae))
+
+
+### Chores
+
+* **docs:** update client docstring ([#64](https://github.com/jc-nana/lucere-python/issues/64)) ([bb6982e](https://github.com/jc-nana/lucere-python/commit/bb6982e3ae427b0e377265d3a6dbfe328211724f))
+* **internal:** bump rye to 0.44.0 ([#69](https://github.com/jc-nana/lucere-python/issues/69)) ([4123c5b](https://github.com/jc-nana/lucere-python/commit/4123c5b87a78610314593e0243a0ebc5b5499f33))
+* **internal:** codegen related update ([#68](https://github.com/jc-nana/lucere-python/issues/68)) ([2fcb90c](https://github.com/jc-nana/lucere-python/commit/2fcb90c02cff571dd596285614705a34975ee5e9))
+* **internal:** fix devcontainers setup ([#60](https://github.com/jc-nana/lucere-python/issues/60)) ([707782b](https://github.com/jc-nana/lucere-python/commit/707782b546b2d9c12028ce78654d66dff923dc1a))
+* **internal:** properly set __pydantic_private__ ([#62](https://github.com/jc-nana/lucere-python/issues/62)) ([164d27d](https://github.com/jc-nana/lucere-python/commit/164d27d9791ba0a0fbbb29af5ebfc5e320422c6d))
+* **internal:** remove extra empty newlines ([#67](https://github.com/jc-nana/lucere-python/issues/67)) ([c876361](https://github.com/jc-nana/lucere-python/commit/c876361ee558bfc779ae072fef6f3cebccae5fa2))
+* **internal:** remove unused http client options forwarding ([#65](https://github.com/jc-nana/lucere-python/issues/65)) ([bed064d](https://github.com/jc-nana/lucere-python/commit/bed064dcdbf25d21fe66663af8830ee35fba1706))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#63](https://github.com/jc-nana/lucere-python/issues/63)) ([09779dd](https://github.com/jc-nana/lucere-python/commit/09779ddceb31f097333a7b48578740d072712dd5))
+
 ## 0.1.0-alpha.6 (2025-02-21)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
