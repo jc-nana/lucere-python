@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-03-17)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Bug Fixes
+
+* **ci:** ensure pip is always available ([#72](https://github.com/jc-nana/lucere-python/issues/72)) ([31ba387](https://github.com/jc-nana/lucere-python/commit/31ba3870cdd231127e0bb186b2052c6af7a6529a))
+* **ci:** remove publishing patch ([#74](https://github.com/jc-nana/lucere-python/issues/74)) ([18791e8](https://github.com/jc-nana/lucere-python/commit/18791e8f4f7156e3d152030173d4a1f73bc2adcc))
+
 ## 0.1.0-alpha.7 (2025-03-15)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
