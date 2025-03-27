@@ -1,2 +1,4 @@
 configured_endpoints: 5
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/lucere%2Flucere-d7c88b6bcb0dd868229800674333fd3935b571150603033b67548ed70c34865d.yml
+openapi_spec_hash: e587c67af6f437ec335ab2402da54bab
+config_hash: 374dedd5e41c7d1fc6989f59de3ddee6
