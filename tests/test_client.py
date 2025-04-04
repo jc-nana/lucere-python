@@ -1738,7 +1738,7 @@ class TestAsyncLucere:
         import threading
 
         from lucere._utils import asyncify
-        from lucere._base_client import get_platform 
+        from lucere._base_client import get_platform
 
         async def test_main() -> None:
             result = await asyncify(get_platform)()
