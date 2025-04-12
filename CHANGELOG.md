@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-04-12)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Bug Fixes
+
+* **perf:** optimize some hot paths ([e01453d](https://github.com/jc-nana/lucere-python/commit/e01453d5eec2ec08eee3d08e4e3c210ba2b5fab4))
+* **perf:** skip traversing types for NotGiven values ([2c41c49](https://github.com/jc-nana/lucere-python/commit/2c41c49a2b11fbcb6359d5f58d42f56502e0b9d4))
+
+
+### Chores
+
+* fix typos ([#76](https://github.com/jc-nana/lucere-python/issues/76)) ([f0009c0](https://github.com/jc-nana/lucere-python/commit/f0009c0bce9dd30deb257564bb55ac972b3499ed))
+* **internal:** expand CI branch coverage ([dec7ad3](https://github.com/jc-nana/lucere-python/commit/dec7ad367f956c96b627e8080db13ab5d5622c41))
+* **internal:** reduce CI branch coverage ([08c8b6e](https://github.com/jc-nana/lucere-python/commit/08c8b6ee911db1838049d0ee752c4d46b803c58e))
+* **internal:** remove trailing character ([#78](https://github.com/jc-nana/lucere-python/issues/78)) ([d86f84e](https://github.com/jc-nana/lucere-python/commit/d86f84e0b4e2878fbc8f8754b32360d6e9217c65))
+* **internal:** slight transform perf improvement ([#79](https://github.com/jc-nana/lucere-python/issues/79)) ([249965d](https://github.com/jc-nana/lucere-python/commit/249965da8b0ee2d0ff46647aaf73b22a4ca79544))
+
 ## 0.1.0-alpha.8 (2025-03-17)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
