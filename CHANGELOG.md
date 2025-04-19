@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-04-19)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Chores
+
+* **client:** minor internal fixes ([605b7ed](https://github.com/jc-nana/lucere-python/commit/605b7ed78f5a7ceaeb857a6a98a3b3560216a186))
+* **internal:** base client updates ([a129599](https://github.com/jc-nana/lucere-python/commit/a12959938d43bfe0b316870c4632e72313031f7b))
+* **internal:** bump pyright version ([fe25b33](https://github.com/jc-nana/lucere-python/commit/fe25b33a43203f6e254819b083029cba8343b109))
+* **internal:** update models test ([385be8e](https://github.com/jc-nana/lucere-python/commit/385be8e26ec3a4a8f325041526ba1af24304f933))
+
 ## 0.1.0-alpha.9 (2025-04-12)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
