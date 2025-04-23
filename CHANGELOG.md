@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-04-23)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Bug Fixes
+
+* **pydantic v1:** more robust ModelField.annotation check ([c43e27f](https://github.com/jc-nana/lucere-python/commit/c43e27f68d06624430b83394fafe3e939603fe4d))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([eb62f65](https://github.com/jc-nana/lucere-python/commit/eb62f65cfc4e0d56b08f0536ae7754ee0589f496))
+* **client:** minor internal fixes ([605b7ed](https://github.com/jc-nana/lucere-python/commit/605b7ed78f5a7ceaeb857a6a98a3b3560216a186))
+* **internal:** base client updates ([a129599](https://github.com/jc-nana/lucere-python/commit/a12959938d43bfe0b316870c4632e72313031f7b))
+* **internal:** bump pyright version ([fe25b33](https://github.com/jc-nana/lucere-python/commit/fe25b33a43203f6e254819b083029cba8343b109))
+* **internal:** fix list file params ([5a16276](https://github.com/jc-nana/lucere-python/commit/5a1627650416b237bd024010e98c192bc7b4f5d6))
+* **internal:** import reformatting ([cc9348e](https://github.com/jc-nana/lucere-python/commit/cc9348e5b68d849d9f71c5c86305a4b762c2d248))
+* **internal:** refactor retries to not use recursion ([cf62e7d](https://github.com/jc-nana/lucere-python/commit/cf62e7dbca495c0541fdc78f617e7b2ec87eba74))
+* **internal:** update models test ([385be8e](https://github.com/jc-nana/lucere-python/commit/385be8e26ec3a4a8f325041526ba1af24304f933))
+
 ## 0.1.0-alpha.9 (2025-04-12)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
