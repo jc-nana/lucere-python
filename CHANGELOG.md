@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-05-10)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Bug Fixes
+
+* **package:** support direct resource imports ([b66f3a5](https://github.com/jc-nana/lucere-python/commit/b66f3a523d3b7317e1d4271520262f8ce2e5b2fb))
+
+
+### Chores
+
+* broadly detect json family of content-type headers ([29944ab](https://github.com/jc-nana/lucere-python/commit/29944ab8072ce2404dc2086bcecc08542cc31a8d))
+* **ci:** only use depot for staging repos ([6669e8d](https://github.com/jc-nana/lucere-python/commit/6669e8df5253d68280092b0ed1adc53f407db49a))
+* **internal:** avoid errors for isinstance checks on proxies ([a20e5f7](https://github.com/jc-nana/lucere-python/commit/a20e5f7efefdac2df7560f12c0b696da9336751f))
+* **internal:** codegen related update ([f5c77c3](https://github.com/jc-nana/lucere-python/commit/f5c77c3826d6ac3812d349df306113006afcc5be))
+
 ## 0.1.0-alpha.10 (2025-04-23)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
