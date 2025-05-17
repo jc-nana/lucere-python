@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-05-17)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Chores
+
+* **ci:** fix installation instructions ([d2774c3](https://github.com/jc-nana/lucere-python/commit/d2774c39ddd8bfdcaf584177ce511b5b5851f58f))
+* **ci:** upload sdks to package manager ([fdbc430](https://github.com/jc-nana/lucere-python/commit/fdbc430af0c458b44cf63b8ce33333acaf01e0d9))
+* **internal:** codegen related update ([d2b3380](https://github.com/jc-nana/lucere-python/commit/d2b3380c98afdd159102a240bc8864a09e35cbf8))
+
 ## 0.1.0-alpha.11 (2025-05-10)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
