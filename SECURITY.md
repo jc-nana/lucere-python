@@ -16,11 +16,11 @@ before making any information public.
 ## Reporting Non-SDK Related Security Issues
 
 If you encounter security issues that are not directly related to SDKs but pertain to the services
-or products provided by Lucere please follow the respective company's security reporting guidelines.
+or products provided by Lucere, please follow the respective company's security reporting guidelines.
 
 ### Lucere Terms and Policies
 
-Please contact hello@lucere.app for any questions or concerns regarding security of our services.
+Please contact hello@lucere.app for any questions or concerns regarding the security of our services.
 
 ---
 
