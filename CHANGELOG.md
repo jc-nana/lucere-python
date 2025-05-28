@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-05-28)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Bug Fixes
+
+* **docs/api:** remove references to nonexistent types ([42a47f3](https://github.com/jc-nana/lucere-python/commit/42a47f387e4666d2fbce20b779e4d589362d710c))
+
+
+### Chores
+
+* **ci:** fix installation instructions ([d2774c3](https://github.com/jc-nana/lucere-python/commit/d2774c39ddd8bfdcaf584177ce511b5b5851f58f))
+* **ci:** upload sdks to package manager ([fdbc430](https://github.com/jc-nana/lucere-python/commit/fdbc430af0c458b44cf63b8ce33333acaf01e0d9))
+* **docs:** grammar improvements ([ef553d7](https://github.com/jc-nana/lucere-python/commit/ef553d7359c55a4225f1680dedc12fd572d353ce))
+* **internal:** codegen related update ([b21fe74](https://github.com/jc-nana/lucere-python/commit/b21fe747ed24e1c14124618588091a5399455087))
+* **internal:** codegen related update ([d2b3380](https://github.com/jc-nana/lucere-python/commit/d2b3380c98afdd159102a240bc8864a09e35cbf8))
+
 ## 0.1.0-alpha.11 (2025-05-10)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
