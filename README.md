@@ -24,9 +24,12 @@ pip install --pre lucere
 The full API of this library can be found in [api.md](api.md).
 
 ```python
+import os
 from lucere import Lucere
 
-client = Lucere()
+client = Lucere(
+    bearer_token=os.environ.get("LUCERE_BEARER_TOKEN"),  # This is the default and can be omitted
+)
 
 completion = client.chat.completions.create(
     messages=[
@@ -49,10 +52,13 @@ so that your Bearer Token is not stored in source control.
 Simply import `AsyncLucere` instead of `Lucere` and use `await` with each API call:
 
 ```python
+import os
 import asyncio
 from lucere import AsyncLucere
 
-client = AsyncLucere()
+client = AsyncLucere(
+    bearer_token=os.environ.get("LUCERE_BEARER_TOKEN"),  # This is the default and can be omitted
+)
 
 
 async def main() -> None:
