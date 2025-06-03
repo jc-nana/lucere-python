@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-06-03)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Features
+
+* **client:** add follow_redirects request option ([7084346](https://github.com/jc-nana/lucere-python/commit/7084346664f7438f6eaff2972314e88c11ebd121))
+
+
+### Chores
+
+* **docs:** remove reference to rye shell ([b4ddf1d](https://github.com/jc-nana/lucere-python/commit/b4ddf1d8f7deac5a348921ab82114692d86c3fd2))
+
 ## 0.1.0-alpha.12 (2025-05-28)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
