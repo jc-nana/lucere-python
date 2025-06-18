@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2025-06-18)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Bug Fixes
+
+* **tests:** fix: tests which call HTTP endpoints directly with the example parameters ([45e74f7](https://github.com/jc-nana/lucere-python/commit/45e74f79da58422b61ece18206d4dfb8581c02ba))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([c01662d](https://github.com/jc-nana/lucere-python/commit/c01662d7d9aaced6a6b5948567ba750d4a89f03a))
+* **internal:** update conftest.py ([4f4ad2c](https://github.com/jc-nana/lucere-python/commit/4f4ad2c6561da7ab9db1f04f04077ea0b9a8c89f))
+* **readme:** update badges ([7245142](https://github.com/jc-nana/lucere-python/commit/7245142d9b05258b79b394f8546578616a93bc49))
+* **tests:** add tests for httpx client instantiation & proxies ([8ca1a15](https://github.com/jc-nana/lucere-python/commit/8ca1a157ae2daaf4d13bb89485e3672cebe5bbd4))
+
 ## 0.1.0-alpha.13 (2025-06-13)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
