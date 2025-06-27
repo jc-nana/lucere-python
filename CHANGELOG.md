@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2025-06-27)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Features
+
+* **client:** add support for aiohttp ([a87b1ec](https://github.com/jc-nana/lucere-python/commit/a87b1ec5902c7564d6898387231981ff0d90b7cb))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([a39649c](https://github.com/jc-nana/lucere-python/commit/a39649c175f1d1d206bba0e62b073c4239d98979))
+
+
+### Chores
+
+* **tests:** skip some failing tests on the latest python versions ([555a5b4](https://github.com/jc-nana/lucere-python/commit/555a5b41c94f2027b62736e47113630878c95ef6))
+
+
+### Documentation
+
+* **client:** fix httpx.Timeout documentation reference ([eb83bfe](https://github.com/jc-nana/lucere-python/commit/eb83bfe66c48cbfda5a1785721369748c2e8ced4))
+
 ## 0.1.0-alpha.14 (2025-06-18)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
