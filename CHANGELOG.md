@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2025-06-30)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Bug Fixes
+
+* **ci:** correct conditional ([a40f10d](https://github.com/jc-nana/lucere-python/commit/a40f10dcaf944b5e890796f337fbbad2c83b70f9))
+
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([909b7dd](https://github.com/jc-nana/lucere-python/commit/909b7dd4bc51f9c5eda8c1d3f05a45a21d835317))
+
 ## 0.1.0-alpha.15 (2025-06-27)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
