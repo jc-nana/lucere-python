@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-07-02)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Chores
+
+* **ci:** change upload type ([355b30e](https://github.com/jc-nana/lucere-python/commit/355b30e61f336a31d1d5a9248889c0b431ce6ddf))
+
 ## 0.1.0-alpha.16 (2025-06-30)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
