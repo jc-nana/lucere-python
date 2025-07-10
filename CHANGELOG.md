@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-07-10)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Bug Fixes
+
+* **parsing:** correctly handle nested discriminated unions ([0242f7f](https://github.com/jc-nana/lucere-python/commit/0242f7f6cbcf9cba9115b318834844c8f5d0813c))
+
+
+### Chores
+
+* **ci:** change upload type ([355b30e](https://github.com/jc-nana/lucere-python/commit/355b30e61f336a31d1d5a9248889c0b431ce6ddf))
+* **internal:** bump pinned h11 dep ([c2c4db5](https://github.com/jc-nana/lucere-python/commit/c2c4db559ac6dab86e3d48950a4324be48e2ff10))
+* **internal:** codegen related update ([9c23a26](https://github.com/jc-nana/lucere-python/commit/9c23a262a2a93ef43f8e0b5be4abd7ab7247641e))
+* **package:** mark python 3.13 as supported ([a40ac82](https://github.com/jc-nana/lucere-python/commit/a40ac82358ba7d9c38459fce5f0eb65bd7e8a2d5))
+
 ## 0.1.0-alpha.16 (2025-06-30)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
