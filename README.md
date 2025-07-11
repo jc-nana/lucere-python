@@ -1,6 +1,7 @@
 # Lucere Python API library
 
-[![PyPI version](<https://img.shields.io/pypi/v/lucere.svg?label=pypi%20(stable)>)](https://pypi.org/project/lucere/)
+<!-- prettier-ignore -->
+[![PyPI version](https://img.shields.io/pypi/v/lucere.svg?label=pypi%20(stable))](https://pypi.org/project/lucere/)
 
 The Lucere Python library provides convenient access to the Lucere REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
