@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-07-12)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Bug Fixes
+
+* **client:** don't send Content-Type header on GET requests ([959bbbf](https://github.com/jc-nana/lucere-python/commit/959bbbf5e3dd3d45bf80dac8d50ba392c3643bfe))
+
+
+### Chores
+
+* **readme:** fix version rendering on pypi ([1bc375e](https://github.com/jc-nana/lucere-python/commit/1bc375e84a3acb42cacc98f0546f3d5f1fbb52c8))
+
 ## 0.1.0-alpha.17 (2025-07-10)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
