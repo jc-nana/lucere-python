@@ -93,7 +93,6 @@ pip install --pre lucere[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
-import os
 import asyncio
 from lucere import DefaultAioHttpClient
 from lucere import AsyncLucere
@@ -101,9 +100,7 @@ from lucere import AsyncLucere
 
 async def main() -> None:
     async with AsyncLucere(
-        bearer_token=os.environ.get(
-            "LUCERE_BEARER_TOKEN"
-        ),  # This is the default and can be omitted
+        bearer_token="My Bearer Token",
         http_client=DefaultAioHttpClient(),
     ) as client:
         completion = await client.chat.completions.create(

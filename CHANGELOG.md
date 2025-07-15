@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-07-15)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Features
+
+* clean up environment call outs ([84fa273](https://github.com/jc-nana/lucere-python/commit/84fa2738cd46997d7013ba3d610b882f78727a0d))
+
 ## 0.1.0-alpha.18 (2025-07-12)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
