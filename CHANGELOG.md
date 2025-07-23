@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-07-23)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Bug Fixes
+
+* **parsing:** parse extra field types ([1062b83](https://github.com/jc-nana/lucere-python/commit/1062b8315f1072d8172bb365fe8d798f28e1b38b))
+
 ## 0.1.0-alpha.19 (2025-07-22)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
