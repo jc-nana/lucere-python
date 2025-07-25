@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-07-25)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Chores
+
+* **project:** add settings file for vscode ([fb1bf0f](https://github.com/jc-nana/lucere-python/commit/fb1bf0fb2032b84cd3a9592da3d1c5f219d2e85a))
+
 ## 0.1.0-alpha.20 (2025-07-23)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
