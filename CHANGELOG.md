@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-08-06)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **client:** support file upload requests ([08df208](https://github.com/jc-nana/lucere-python/commit/08df208bed84171d8c3c3d587e6aae6f3bde61af))
+
+
+### Chores
+
+* **internal:** fix ruff target version ([f8edb4c](https://github.com/jc-nana/lucere-python/commit/f8edb4c4aea0027a5cc17973ceca60bbf86f813a))
+* **project:** add settings file for vscode ([fb1bf0f](https://github.com/jc-nana/lucere-python/commit/fb1bf0fb2032b84cd3a9592da3d1c5f219d2e85a))
+
 ## 0.1.0-alpha.20 (2025-07-23)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
