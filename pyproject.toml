@@ -1,6 +1,6 @@
 [project]
 name = "lucere"
-version = "0.1.0-alpha.20"
+version = "0.1.0-alpha.21"
 description = "The official Python library for the lucere API"
 dynamic = ["readme"]
 license = "Apache-2.0"
@@ -158,7 +158,7 @@ reportPrivateUsage = false
 [tool.ruff]
 line-length = 120
 output-format = "grouped"
-target-version = "py37"
+target-version = "py38"
 
 [tool.ruff.format]
 docstring-code-format = true
