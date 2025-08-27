@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2025-08-27)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **client:** support file upload requests ([08df208](https://github.com/jc-nana/lucere-python/commit/08df208bed84171d8c3c3d587e6aae6f3bde61af))
+
+
+### Bug Fixes
+
+* avoid newer type syntax ([e001208](https://github.com/jc-nana/lucere-python/commit/e0012080e9fd609ef57c3c78552fc3c3cbd6687d))
+
+
+### Chores
+
+* **internal:** change ci workflow machines ([0188a36](https://github.com/jc-nana/lucere-python/commit/0188a3637c26a6d8617164b97e255ef1c9fa7ab0))
+* **internal:** fix ruff target version ([f8edb4c](https://github.com/jc-nana/lucere-python/commit/f8edb4c4aea0027a5cc17973ceca60bbf86f813a))
+* **internal:** update comment in script ([d1e69f5](https://github.com/jc-nana/lucere-python/commit/d1e69f596cc6784b48f8e4961161664f363053a2))
+* **internal:** update pyright exclude list ([54db012](https://github.com/jc-nana/lucere-python/commit/54db012f9b369d15bde9cd93e5680467179c9804))
+* **project:** add settings file for vscode ([fb1bf0f](https://github.com/jc-nana/lucere-python/commit/fb1bf0fb2032b84cd3a9592da3d1c5f219d2e85a))
+* update @stainless-api/prism-cli to v5.15.0 ([bd7d5d9](https://github.com/jc-nana/lucere-python/commit/bd7d5d9bc2f1a60d66f43c8c74788a12113d6bd8))
+* update github action ([fda8c4b](https://github.com/jc-nana/lucere-python/commit/fda8c4bdff18e569ac847de3cde49b0914aa7ae4))
+
 ## 0.1.0-alpha.20 (2025-07-23)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
