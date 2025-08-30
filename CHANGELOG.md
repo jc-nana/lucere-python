@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-08-30)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Chores
+
+* **internal:** add Sequence related utils ([1cc1a00](https://github.com/jc-nana/lucere-python/commit/1cc1a00f45cf2863e7d10b31d910d67be8101525))
+
 ## 0.1.0-alpha.21 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
