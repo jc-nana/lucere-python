@@ -6,7 +6,7 @@ from typing import Iterable, Optional
 
 import httpx
 
-from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -47,17 +47,17 @@ class CompletionsResource(SyncAPIResource):
         *,
         messages: Iterable[completion_create_params.Message],
         model: str,
-        attachments: Optional[Iterable[completion_create_params.Attachment]] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
+        attachments: Optional[Iterable[completion_create_params.Attachment]] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """
         Agent Endpoint
@@ -99,7 +99,7 @@ class CompletionsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """Test Endpoint"""
         return self._post(
@@ -136,17 +136,17 @@ class AsyncCompletionsResource(AsyncAPIResource):
         *,
         messages: Iterable[completion_create_params.Message],
         model: str,
-        attachments: Optional[Iterable[completion_create_params.Attachment]] | NotGiven = NOT_GIVEN,
-        max_tokens: Optional[int] | NotGiven = NOT_GIVEN,
-        stream: Optional[bool] | NotGiven = NOT_GIVEN,
-        temperature: Optional[float] | NotGiven = NOT_GIVEN,
-        user: Optional[str] | NotGiven = NOT_GIVEN,
+        attachments: Optional[Iterable[completion_create_params.Attachment]] | Omit = omit,
+        max_tokens: Optional[int] | Omit = omit,
+        stream: Optional[bool] | Omit = omit,
+        temperature: Optional[float] | Omit = omit,
+        user: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """
         Agent Endpoint
@@ -188,7 +188,7 @@ class AsyncCompletionsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> object:
         """Test Endpoint"""
         return await self._post(
