@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-10-18)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* improve future compat with pydantic v3 ([ae4cac4](https://github.com/jc-nana/lucere-python/commit/ae4cac4ae0b89a56d57f15474061936335e9e562))
+* **types:** replace List[str] with SequenceNotStr in params ([4692561](https://github.com/jc-nana/lucere-python/commit/4692561f603c898bb32b63804a1cd0af4285d633))
+
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([99a699b](https://github.com/jc-nana/lucere-python/commit/99a699b2aaa735c5adbdd564f834934b2f8cd487))
+* do not install brew dependencies in ./scripts/bootstrap by default ([30cf61d](https://github.com/jc-nana/lucere-python/commit/30cf61d3bfa87237a168c465721d1e1d2afb17d2))
+* **internal:** add Sequence related utils ([1cc1a00](https://github.com/jc-nana/lucere-python/commit/1cc1a00f45cf2863e7d10b31d910d67be8101525))
+* **internal:** detect missing future annotations with ruff ([5d5a053](https://github.com/jc-nana/lucere-python/commit/5d5a0535766825effa4f8f71878992e369bf7ac5))
+* **internal:** move mypy configurations to `pyproject.toml` file ([8abe0b2](https://github.com/jc-nana/lucere-python/commit/8abe0b2647ee680b27840748c1c2f762bdc37be8))
+* **internal:** update pydantic dependency ([776fd19](https://github.com/jc-nana/lucere-python/commit/776fd1931c65ef960248c6f1e28516ea1f661238))
+* **tests:** simplify `get_platform` test ([e811fc4](https://github.com/jc-nana/lucere-python/commit/e811fc478db1e736b91360208cc045620064842f))
+* **types:** change optional parameter type from NotGiven to Omit ([3345848](https://github.com/jc-nana/lucere-python/commit/3345848c75fa6d3b95399bd16c37528135196339))
+
 ## 0.1.0-alpha.21 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/jc-nana/lucere-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
